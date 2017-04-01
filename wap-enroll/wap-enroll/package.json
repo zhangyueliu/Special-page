@@ -1,0 +1,17 @@
+{
+  "name": "wap-enroll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.27.3",
+    "style-loader": "^0.15.0",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.3.2"
+  }
+}

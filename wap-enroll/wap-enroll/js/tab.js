@@ -1,4 +1,5 @@
 $(function(){
+	console.log('tab.js');
 	var tip1=new tip();
 	$('.head-of-list-each').on('tap',function(){		
 		if(!$(this).hasClass('active')){
