@@ -1,5 +1,4 @@
 $(function(){
-	console.log('tab.js');
 	var tip1=new tip();
 	$('.head-of-list-each').on('tap',function(){		
 		if(!$(this).hasClass('active')){
@@ -37,11 +36,14 @@ $(function(){
 			return false;
 		}
 		//这里去存手机号，并提示成功
-		tip1.showTip({
+		$.getJSON("http://zd.wangxiao.cn/service/collectusers.aspx?ajax=submit&txtMobile="+phone+"&callback=?", function (result) {
+            tip1.showTip({
 				bottomVal:'50%',
 				time: 2000,
-				msg: '手机号输入成功'
+				msg: result
 			});
+        });
+		
 		//存完手机号，清空
 		$('.import-number input').val('');
 		//关闭弹框，开启滑动
