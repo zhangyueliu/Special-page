@@ -7,12 +7,12 @@ $(function(){
 			$('.content-of-list-each').eq(index).show().siblings().hide();
 		}
 	});
-	$('.suspend-div').on('tap',function(){
+	$('.suspend-div').on('click',function(){
 		$('.shade').show();
 		stop();
 		$('a,.next,.prev').css({'pointer-events':'none'});	
 	});
-	$('.close').on('tap',function(){
+	$('.close').on('click',function(){
 		$('.shade').hide();
 		move();
 		setTimeout(function(){$('a,.next,.prev').css({'pointer-events':'auto'});},200);
