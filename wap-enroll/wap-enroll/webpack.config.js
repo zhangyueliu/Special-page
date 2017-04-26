@@ -14,7 +14,10 @@ module.exports = {
 				loader: 'style-loader!css-loader'
 			}, {
 				test: /\.(png|jpg)$/,
-				loader: 'url-loader?limit=8192'
+				loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]',
+				options:{
+					publicPath:'/'
+				}
 			}, 
 //			{
 //				include: path.join(__dirname, '../bulid/js'),
