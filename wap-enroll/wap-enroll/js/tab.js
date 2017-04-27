@@ -55,7 +55,7 @@ $(function(){
 	    // 如果需要前进后退按钮
 	    nextButton: '.next',
 	    prevButton: '.prev',
-	  });    
+	});    
 });
 //实现滚动条无法滚动
 var mo=function(e){e.preventDefault();};

@@ -37,5 +37,5 @@ module.exports = {
 		]
 	},
 	watch: true,
-	devtool: "cheap-module-eval-source-map"
+	devtool: "cheap-module-eval-source-map"//调试代码使用
 }
