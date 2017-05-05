@@ -7,12 +7,12 @@ $(function(){
 			$('.content-of-list-each').eq(index).show().siblings().hide();
 		}
 	});
-	$('.suspend-div').on('click',function(){
+	$('.suspend-div').on('tap',function(){
 		$('.shade').show();
 		stop();
 		$('a,.next,.prev').css({'pointer-events':'none'});	
 	});
-	$('.close').on('click',function(){
+	$('.close').on('tap',function(){
 		$('.shade').hide();
 		move();
 		setTimeout(function(){$('a,.next,.prev').css({'pointer-events':'auto'});},200);
@@ -35,8 +35,19 @@ $(function(){
 			});
 			return false;
 		}
+		var sign;
+		if($('#sign').length>0){
+			sign=$('#sign').val().trim().toLowerCase();
+		}else{
+			tip1.showTip({
+				bottomVal:'50%',
+				time: 2000,
+				msg: '未获取到当前考试，请填写sign值'
+			});
+			return false;
+		}
 		//这里去存手机号，并提示成功
-		$.getJSON("http://zd.wangxiao.cn/service/collectusers.aspx?ajax=submit&txtMobile="+phone+"&callback=?", function (result) {
+		$.getJSON("http://zd.wangxiao.cn/service/collectusers.aspx?ajax=submit&txtMobile="+phone+"&sign="+sign+"&callback=?", function (result) {
             tip1.showTip({
 				bottomVal:'50%',
 				time: 2000,
@@ -55,7 +66,7 @@ $(function(){
 	    // 如果需要前进后退按钮
 	    nextButton: '.next',
 	    prevButton: '.prev',
-	});    
+	  });    
 });
 //实现滚动条无法滚动
 var mo=function(e){e.preventDefault();};

@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="http://img.wangxiao.cn/css/exam/base2013.css">
+		<link rel="stylesheet" type="text/css" href="http://static.wangxiao.cn/login/css/newlogin.css">
+		<link rel="stylesheet" type="text/css" href="http://img.wangxiao.cn/css/exam/index2013.css">
+		<style type="text/css">
+			body {
+				font-family: "微软雅黑";
+				color: #333;
+				font-size: 14px;
+			}
+			
+			i {
+				font-style: normal;
+				font-size: 12px;
+			}
+			.classTit {
+				background: url(http://img.wangxiao.cn/bjupload/2016-11-29/b50f495d-4b67-4726-9fcb-f329bd316fe9.jpg);
+				height: 54px;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.classTit span.quickmenu {
+				float: right;
+				margin-right: 20px;
+				font-weight: normal;
+				line-height: 54px;
+			}
+			.classTit span a{
+				text-decoration: none;
+				color: #333;
+			}
+			.classTit .quickmenu,
+			.bigTitBar span {
+				color: #D96C41;
+			}
+			
+			.erj-title {
+				font-size: 22px;
+				padding: 10px;
+				color:#fc6f39;
+				text-align: center;
+			}
+			
+			.list-one {
+				background-color: #009900;
+			}
+			
+			.list-two {
+				background-color: #f22533;
+			}
+			
+			.list-three {
+				background-color: #17b8e8;
+			}
+			
+			.list-four {
+				background-color: #f17e1f;
+			}
+			
+			.list-text {
+				margin: 7px 0;
+			}
+			
+			.font-red {
+				color: #ff0000;
+			}
+			
+			table.combo_table td,
+			table.combo_table th {
+				border: 1px solid #ccc!important;
+			}
+			
+			table.combo_table td input {
+				margin: 0 5px 0 10px;
+			}
+			
+			.submit_indexbtn1 {
+				background: #d51010;
+				font-size: 14px;
+				font-weight: bold;
+				text-align: center;
+				width: 140px;
+				height: 32px;
+				color: #FFF;
+				margin-left: 20px;
+				border: 0;
+				padding-right: 5px;
+			}
+			
+			.submit_box {
+				width: 295px!important;
+				margin: 0 auto!important;
+				float: none;
+			}
+			
+			.table-tad-time {
+				color: #cc0000;
+			}
+			
+			.table-tad-left,
+			.table-tad-center,
+			.table-tad-right {
+				float: left;
+				text-align: left;
+			}
+			
+			.tad-center-list {
+				padding-top: 10px;
+				padding-left: 30px;
+				text-align: left;
+				display: none;
+			}
+			
+			.table-tad-right {
+				padding-top: 10px;
+			}
+			
+			.table-tad-left {
+				width: 20%;
+			}
+			
+			.table-tad-center {
+				width: 40%;
+			}
+			
+			.table-tad-right {
+				width: 40%;
+			}
+			
+			.tad-left-list {
+				padding: 20px;
+				border: 1px solid #ccc;
+				text-align: center;
+				margin: 0;
+				cursor: pointer;
+			}
+			
+			.title-color {
+				color: #17b8e8;
+				text-align: left;
+				margin-bottom: 0;
+			}
+			
+			.course-list {
+				width: 25%;
+				float: left;
+			}
+			
+			.course-list-title {
+				background-image: url(http://img.wangxiao.cn//images/jz2//u10.png);
+				width: 100%;
+				height: 43px;
+				line-height: 46px;
+				text-align: center;
+				background-size: 100% 100%;
+				font-size: 20px;
+				background-repeat: no-repeat;
+			}
+			
+			.course-list-right {
+				float: right;
+			}
+			
+			.combo_table {
+				position: relative;
+			}
+			
+			.hover-title {
+				position: absolute;
+				background-color: #fff;
+				border: 1px solid red;
+				display: none;
+				top: 59px;
+				padding: 0 10px;
+			}
+			
+			.title-color-content {
+				text-align: left;
+				padding-left: 15px;
+				margin: 5px 0;
+				color: #333;
+			}
+			
+			.circle-right {
+				width: 68px;
+				height: 68px;
+				border-radius: 34px;
+				top: -29px;
+				right: -23px;
+				background-color: red;
+				font-size: 10px;
+				text-align: left;
+				position: absolute;
+				color: #fff;
+			}
+			
+			.hover-show {
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.outer-box {
+				width: 97%;
+				border: 1px solid #ccc;
+				border-top: 0;
+			}
+			
+			.outer-box p {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			
+			.outer-list-title {
+				border-top: 7px solid #17b8e8;
+				margin: 0;
+				padding: 10px;
+				text-align: center;
+			}
+			
+			.daoxue {
+				text-align: center;
+				border-top: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+				padding: 6px;
+				margin: 0;
+			}
+			
+			.daoxue b {
+				color: #17b8e8;
+				font-size: 16px;
+			}
+			
+			table img {
+				width: 100%;
+			}
+			
+			table.combo_table td.subject,
+			table.combo_table td.td_title {
+				padding-left: 0.5rem!important;
+			}
+			
+			.outer-list-button {
+				margin-bottom: 0;
+			}
+			
+			.button {
+				margin-top: 0;
+			}
+			
+			.button a {
+				display: block;
+				width: 60%;
+				margin: 0 auto;
+				border: 1px solid #ccc;
+				border-radius: 20px;
+				padding: 3px;
+			}
+			
+			.button a:hover {
+				text-decoration: none;
+				background-color: #17b8e8;
+				color: #fff;
+			}
+			
+			.base-course .button a:hover {
+				background-color: #F17E1F;
+			}
+			
+			.goto-exam .button a:hover {
+				background-color: #009900;
+			}
+			
+			.strong-course .button a:hover {
+				background-color: #f22533;
+				;
+			}
+			
+			.goto-exam .daoxue b {
+				color: #009900;
+			}
+			
+			.strong-course .daoxue b {
+				color: #f22533;
+			}
+			
+			.base-course .outer-list-title {
+				border-top-color: #F17E1F;
+			}
+			
+			.goto-exam .outer-list-title {
+				border-top-color: #009900
+			}
+			
+			.strong-course .outer-list-title {
+				border-top-color: #f22533;
+			}
+			
+			.outer-list-button,
+			.button {
+				text-align: center;
+			}
+			
+			.line {
+				text-decoration: line-through;
+			}
+			
+			.red {
+				color: #ff0000;
+			}
+			
+			.price {
+				font-size: 30px;
+			}
+			
+			.base-course b {
+				color: #f17e1f;
+			}
+			
+			.base-course .course-list-title {
+				background-image: url(http://img.wangxiao.cn//images/jz2//u12.png);
+			}
+			
+			.goto-exam .course-list-title {
+				background-image: url(http://img.wangxiao.cn//images/jz2//u8.png);
+			}
+			
+			.strong-course .course-list-title {
+				background-image: url(http://img.wangxiao.cn//images/jz2//u12.png);
+			}
+			
+			.click-box {
+				position: fixed;
+				width: 780px;
+				top: 20%;
+				left: 15%;
+				padding: 20px;
+				background-color: #fff;
+				border-radius: 8px;
+				display: none;
+				z-index: 1000;
+			}
+			
+			table.combo_table th,
+			.tablet-color td {
+				background-color: #FC6!important;
+				color: #333;
+			}
+			
+			table.combo_table th a {
+				color: #!important;
+			}
+			
+			.close-click-box {
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				border-radius: 10px;
+				background-color: #f2f2f2;
+				float: right;
+				text-align: center;
+				margin-left: 5px;
+				margin-top: -5px;
+			}
+			
+			.close-click-box:hover {
+				background-color: #f17e1f;
+				color: #fff;
+			}
+			
+			.click-outer-box {
+				position: fixed;
+				top: 0;
+				height: 100%;
+				width: 100%;
+				background-color: #000;
+				opacity: 0.2;
+				display: none;
+			}
+			
+			.click-showtable,
+			.close-click-box {
+				cursor: pointer;
+			}
+			
+			.red-box-left,
+			.red-box-right {
+				width: 1px;
+				height: 133px;
+				position: relative;
+				top: -206px;
+				float: left;
+			}
+			
+			.red-box-left {
+				border-left: 1px solid red;
+				left: 268px;
+			}
+			
+			.red-box-right {
+				border-left: 1px solid red;
+				left: 428px;
+			}
+			
+			.red-box-top,
+			.red-box-bottom {
+				width: 161px;
+				height: 1px;
+				position: relative;
+				top: -364px;
+				left: 264px;
+			}
+			
+			.red-box-top {
+				border-top: 1px solid red;
+			}
+			
+			.red-box-bottom {
+				border-bottom: 1px solid red;
+				left: 101px;
+				top: -72px;
+			}
+			
+			table.combo_table td {
+				padding: 5px;
+			}
+			
+			<body> .STYLE2 {
+				font-size: 12px
+			}
+			
+			.STYLE2 {
+				font-size: 12px
+			}
+			
+			.STYLE3 {
+				color: #FF0000
+			}
+		</style>
+		<style>
+			.compare-table {
+				border: 1px solid #ccc;
+				width: 100%;
+				border-collapse: collapse;
+				text-align: center;
+			}
+			.compare-table td,
+			.compare-table th {
+				border: 1px solid #ccc;
+				padding: 5px 10px;
+			}
+			.bNoTop{border: 0;}
+			.compare-table th{font-size: 16px;}
+			.course-class{color: #fff;padding: 6px;border-radius: 15px;background-color: green;display: block;font-weight: normal;}
+			.fontcolor-red{color:red;}
+			.move-float-show{position: relative;cursor: pointer;}
+			.float-lay{border: 1px solid #fc6f39;border:1px solid rgba(252,109,54,0.5); padding: 6px;background-color: #fff;position: absolute;left:50%;top: 100%;width:180px;text-align: left;z-index: 20;min-height: 80px;box-shadow: 0 0 5px rgba(252,109,54,0.5);display: none;border-radius: 2px;}
+			.buy-btn{border-radius: 15px;color:#333;background-color:#fff;padding: 3px 20px;text-decoration: none;display: block;border: 1px solid #ccc; margin-top: 5px;}
+			.buy-btn:hover{background-color: #fc6f39!important;color: #fff!important;text-decoration: none!important;}
+			.note-img{margin-left: 8px;width: 14px;height: 14px;vertical-align: text-bottom;margin-bottom: 2px;}
+			.submit_box{padding-top: 10px;padding-bottom: 10px;}
+			.submit_indexbtn1{margin:10px 0!important; }
+		</style>
+	</head>
+
+	<body>
+		<div class="partTwo wrap class">
+			<h2 class="classTit"><span class="quickmenu f12"><a title="一级建造师课程套餐" href="#tc" target="_self">课程套餐</a> | <a title="一级建造师优惠方案" href="#yh" target="_self">优惠方案</a> | <a title="一级建造师班次介绍" href="#bc" target="_self">班次介绍</a> | <a title="一级建造师教材辅导" href="#fd" target="_self">教材辅导</a> </span></h2>
+			<div class="erj-title"><b>【班型介绍】</b></div>
+			<div class="class bNoTop">
+			<div>
+				<table class="compare-table">
+					<tr>
+						<th></th>
+						<th>分类模块</th>
+						<th style="width:16%;">教学练模块</th>
+						<th style="width:18%;"><span class="course-class" style="background-color:#009900">精品班</span></th>
+						<th style="width:18%;"><span class="course-class" style="background-color:#f22533">VIP班</span></th>
+						<th style="width:18%;"><span class="course-class" style="background-color:#17b8e8">SVIP班</span></th>
+						<th style="width:18%;"><span class="course-class" style="background-color:#f17e1f">PLUS班</span></th>
+					</tr>
+					<tr>
+						<td rowspan="9">讲课&讲题</td>
+						<td rowspan="9">教师讲解模块</td>
+						<td class="move-float-show">教材精讲<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png">
+						<div class="float-lay">
+							三套讲一套
+						</div>
+						</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">真题解析<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">考点串讲<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">全真模考<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">应试技巧<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">习题特训<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">考前押密<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">终极押题<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">提分专项<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td rowspan="6">准题库模块</td>
+						<td rowspan="4">自主练习模块</td>
+						<td class="move-float-show">每日一练<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">考点练习<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">历年试题<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">模拟试题<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td rowspan="2">高端资料模块</td>
+						<td class="move-float-show">大数据高频考点<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">大数据高频错题<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td rowspan="14" colspan="2">校方服务模块</td>
+						<td class="move-float-show">课后作业<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">学习记录<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">答疑服务<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">机考系统<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">专职助教<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">微信跟踪<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">能力评估报告<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">签署培训协议<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">班级管理<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td class="move-float-show">班主任回访<img class="note-img" src="http://img.wangxiao.cn/images/www/note.png"><div class="float-lay">
+							三套讲一套
+						</div></td>
+						<td></td>
+						<td></td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>配套图书赠送</td>
+						<td></td>
+						<td>送教材</td>
+						<td>送教材+教辅</td>
+						<td>送教材+教辅</td>
+					</tr>
+					<tr>
+						<td>不过退费保障</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>协议保障</td>
+						<td>无</td>
+						<td>免费重学一年</td>
+						<td>无限期免费重学</td>
+						<td>学习课程60%以上<br>扣除10%资料费，90%学费全部退还</td>
+					</tr>
+					<tr>
+						<td>适合人群</td>
+						<td>基础较好、自学能力较强的学员</td>
+						<td>基础薄弱、考试信心不足，需要提高应试能力的学员</td>
+						<td>零基础、自学能力不足，需要全程领学的考生</td>
+						<td>零基础、自学能力不足，需要全程领学的考生</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>价格</td>
+						<td>每科套餐价格</td>
+						<td>300/科<br>1080/全科<a href="#buy-course" class="buy-btn">立即报名</a></td>
+						<td>500/科<br>1880/全科<a href="#buy-course" class="buy-btn">立即报名</a></td>
+						<td>1000/科<br>3980/全科<a href="#buy-course" class="buy-btn">立即报名</a></td>
+						<td>1980/科<br>7980/全科<a href="#buy-course" class="buy-btn">立即报名</a></td>
+					</tr>
+				</table>
+			</div>
+			<div>
+			<div class="erj-title" id="buy-course"><b>【课程套餐】</b></div>
+			<div class="list_con">
+				<form id="frmCourse" method="post" action="http://order.wangxiao.cn/cart.aspx?action=custom" target="_blank">
+					<table class="combo_table noBorderTable" cellspacing="1" cellpadding="0" width="100%" bgcolor="#f5f5f5" border="0">
+						<tbody>
+							<tr>
+								<th rowspan="2" colspan="2">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=0&eId=e9fd5aa8-48a8-406d-bfc6-5728a9c6a131&s=jz1" target="_blank">考试科目</a>
+								</th>
+								<th width="5%" rowspan="2">
+									试听 </th>
+								<th height="15" colspan="2" class="hover-show">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?s=jz1" target="_blank">签约退费套餐<br>
+										<span class="STYLE2">(移入查看详情)</span></a>
+									<div class="circle-right"><br/>
+										<br/> 20%学
+										<br/> &nbsp;&nbsp;员选择 </div>
+								</th>
+								<th height="15" colspan="2" class="hover-show">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?ctype=2&s=jz1" target="_blank">VIP套餐<br>
+										<span class="STYLE2">(移入查看详情)</span></a>
+									<div class="circle-right"><br/>
+										<br/> 30%学
+										<br/> &nbsp;&nbsp;员选择 </div>
+								</th>
+								<th height="15" colspan="2" class="hover-show">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?ctype=5&s=jz1" target="_blank">密训套餐<br><i class="small-size">(移入查看详情)</i></a>
+									<div class="circle-right"><br/><br/>&nbsp;15%学<br/>&nbsp;&nbsp;员选择</div>
+								</th>
+								<th colspan="2" class="hover-show">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?ctype=1&s=jz1" target="_blank">协议套餐<br><i class="small-size">(移入查看详情)</i></a>
+									<div class="circle-right"><br/><br/>&nbsp;20%学<br/>&nbsp;&nbsp;员选择</div>
+								</th>
+								<th colspan="2" class="hover-show">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?ctype=0&s=jz1" target="_blank">精品套餐<br><i class="small-size">(移入查看详情)</i></a>
+									<div class="circle-right"><br/><br/>&nbsp;15%学<br/>&nbsp;&nbsp;员选择</div>
+								</th>
+							</tr>
+
+							<tr class="tablet-color">
+								<td width="8%" class="tip-box">单科
+									<div class="hover-title" style="border-color: #f22533;">
+										<p class="title-color">签约退费套餐=9大模块</p>
+										<p class="title-color-content">教材精讲、真题解析、考点串讲、习题特训、临考揭秘、全真模考、内部资料、提分专项、密押试卷2套</p>
+										<p class="title-color">适合人群</p>
+										<p class="title-color-content">零基础、自学能力不足，需要全程领学和阶段测评的学员</p>
+										<p class="title-color">优惠活动</p>
+										<p class="title-color-content">报名全科套餐赠送《考试教材》+《同步训练与全真模拟测试》</p>
+										<p class="title-color">&nbsp;</p>
+									</div>
+								</td>
+								<td width="8%">全科</td>
+								<td width="8%" class="tip-box">单科
+									<div class="hover-title" style="border-color: #f22533;">
+										<p class="title-color">VIP套餐=7大模块</p>
+										<p class="title-color-content">教材精讲、真题解析、考点串讲、习题特训、临考揭秘、全真模考、内部资料</p>
+										<p class="title-color">适合人群</p>
+										<p class="title-color-content">零基础、自学能力不足，需要全程领学的学员</p>
+										<p class="title-color">优惠活动</p>
+										<p class="title-color-content">报名全科套餐赠送《考试教材》+《同步训练与全真模拟测试》</p>
+										<p class="title-color">&nbsp;</p>
+									</div>
+								</td>
+								<td width="8%">全科</td>
+								<td width="8%" class="tip-box">单科
+									<div class="hover-title" style="border-color: #f22533;">
+										<p class="title-color">密训套餐=4大模块</p>
+										<p class="title-color-content">考点串讲、习题特训、临考揭秘、全真模考</p>
+										<p class="title-color">适合人群</p>
+										<p class="title-color-content">有一定基础、学习时间少、希望全程领学、直播互动的学员</p>
+										<p class="title-color">优惠活动</p>
+										<p class="title-color-content"> 报名全科套餐赠送考试教材一套</p>
+									</div>
+								</td>
+								<td width="8%">全科</td>
+								<td width="8%" class="tip-box">单科
+									<div class="hover-title" style="border-color: #17b8e8;">
+										<p class="title-color">协议套餐=4大模块</p>
+										<p class="title-color-content">教材精讲、真题解析、考点串讲、习题特训</p>
+										<p class="title-color">适合人群</p>
+										<p class="title-color-content">基础薄弱、考试信心不足、需要系统学习、提高应试能力、旨在一次通过的学员</p>
+										<p class="title-color">优惠活动</p>
+										<p class="title-color-content"> 报名全科套餐赠送考试教材一套</p>
+									</div>
+								</td>
+								<td width="8%">全科</td>
+								<td width="8%" class="tip-box">单科
+									<div class="hover-title" style="border-color: #f17e1f;">
+										<p class="title-color">精品套餐=2大模块</p>
+										<p class="title-color-content">教材精讲、真题解析</p>
+										<p class="title-color">适合人群</p>
+										<p class="title-color-content">基础较好、自学能力较强的学员</p>
+										<p class="title-color-content">优惠活动</p>
+										<p class="title-color-content">报名全科套餐赠送《同步训练与全真模拟测试》</p>
+									</div>
+								</td>
+								<td width="8%">全科</td>
+							</tr>
+							<tr>
+								<td class="td_title" valign="middle" rowspan="4" width="1%" align="center">公<br> 共<br> 课 </td>
+							</tr>
+							<tr>
+								<td width="14%" class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=1&sid=867b9cbd-93b7-4d97-bb82-102b3358c7a2&s=jz1" target="_blank">建设工程经济</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=89282338-a5b2-4c51-b6a1-2f7d0b2a5a28" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59881" target="_blank">3680元</a>
+									<input id="Id22913" type="checkbox" value="59881" name="pno" tooltip="0" tooltxt="[精](二建)建设工程施工管理(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52565" target="_blank">1580元</a>
+									<input id="Id22913" type="checkbox" value="52565" name="pno" tooltip="0" tooltxt="[精](二建)建设工程施工管理(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52594" target="_blank">1280元</a>
+									<input id="Id22895" type="checkbox" value="52594" name="pno" tooltip="0" tooltxt="[保](二建)建设工程施工管理(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52527" target="_blank">780元</a>
+									<input id="Id22851" type="checkbox" value="52527" name="pno" tooltip="0" tooltxt="[VIP](二建)建设工程施工管理(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52524" target="_blank">480元</a>
+									<input id="Id22851" type="checkbox" value="52524" name="pno" tooltip="0" tooltxt="[VIP](二建)建设工程施工管理(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=1&sid=abf2d680-82f5-488a-ab65-54d2094cc7e6&s=jz1" target="_blank">建设工程项目管理</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=e2443714-02ba-41b3-a889-0c81be083b51" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59882" target="_blank">3680元</a>
+									<input id="Id22913" type="checkbox" value="59882" name="pno" tooltip="0" tooltxt="[精](二建)建设工程施工管理(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52564" target="_blank">1580元</a>
+									<input id="Id22912" type="checkbox" value="52564" name="pno" tooltip="0" tooltxt="[精](二建)建设工程法规及相关知识(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52595" target="_blank">1280元</a>
+									<input id="Id22894" type="checkbox" value="52595" name="pno" tooltip="0" tooltxt="[保](二建)建设工程法规及相关知识(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52528" target="_blank">780元</a>
+									<input id="Id22850" type="checkbox" value="52528" name="pno" tooltip="0" tooltxt="[VIP](二建)建设工程法规及相关知识(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52525" target="_blank">480元</a>
+									<input id="Id22850" type="checkbox" value="52525" name="pno" tooltip="0" tooltxt="[VIP](二建)建设工程法规及相关知识(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=1&sid=42c5c12e-c454-44cc-a820-54ecf0eade67&s=jz1" target="_blank">法规及相关知识</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=27096755-dfdb-4c8e-b8b4-5515559148d9" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59883" target="_blank">3680元</a>
+									<input id="Id22913" type="checkbox" value="59883" name="pno" tooltip="0" tooltxt="[精](二建)建设工程施工管理(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52566" target="_blank">1580元</a>
+									<input id="Id22912" type="checkbox" value="52566" name="pno" tooltip="0" tooltxt="[精](二建)建设工程法规及相关知识(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52596" target="_blank">1280元</a>
+									<input id="Id22894" type="checkbox" value="52596" name="pno" tooltip="0" tooltxt="[保](二建)建设工程法规及相关知识(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52529" target="_blank">780元</a>
+									<input id="Id22850" type="checkbox" value="52529" name="pno" tooltip="0" tooltxt="[VIP](二建)建设工程法规及相关知识(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52526" target="_blank">480元</a>
+									<input id="Id22850" type="checkbox" value="52526" name="pno" tooltip="0" tooltxt="[VIP](二建)建设工程法规及相关知识(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=22913" target="_blank">——</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="td_title" valign="middle" rowspan="10" align="center">专<br> 业<br> 课</td>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=2&sid=0eda08a6-0e54-4ff5-8887-7cb7f59c745f&s=jz1" target="_blank">建筑工程</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=05af997f-027d-44bf-9daf-210251efdbf1" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59884" target="_blank">3680元</a>
+									<input id="Id22911" type="checkbox" value="59884" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59894" target="_blank">12800元</a>
+									<input id="Id22915" type="checkbox" value="59894" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52567" target="_blank">1580元</a>
+									<input id="Id22911" type="checkbox" value="52567" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52552" target="_blank">5980元</a>
+									<input id="Id22915" type="checkbox" value="52552" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52597" target="_blank">1280元</a>
+									<input id="Id22893" type="checkbox" value="52597" name="pno" tooltip="0" tooltxt="[保](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52607" target="_blank">3980元</a>
+									<input id="Id22893" type="checkbox" value="52607" name="pno" tooltip="0" tooltxt="[保](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52587" target="_blank">780元</a>
+									<input id="Id22916" type="checkbox" value="52587" name="pno" tooltip="0" tooltxt="[保](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52535" target="_blank">2980元</a>
+									<input id="Id22916" type="checkbox" value="52535" name="pno" tooltip="0" tooltxt="[保](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52549" target="_blank">480元</a>
+									<input id="Id22914" type="checkbox" value="52549" name="pno" tooltip="0" tooltxt="[VIP](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52530" target="_blank">1680元</a>
+									<input id="Id22914" type="checkbox" value="52530" name="pno" tooltip="0" tooltxt="[VIP](二建)建筑工程专业(全科)"></td>
+							</tr>
+							<tr>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=2&sid=9bbf783f-4581-4f13-9165-bd10af25d2ae&s=jz1" target="_blank">机电工程</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=4d811432-799a-4ec1-b8eb-2174273e0722" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59885" target="_blank">3680元</a>
+									<input id="Id22911" type="checkbox" value="59885" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59895" target="_blank">12800元</a>
+									<input id="Id22915" type="checkbox" value="59895" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52568" target="_blank">1580元</a>
+									<input id="Id22910" type="checkbox" value="52568" name="pno" tooltip="0" tooltxt="[精](二建)机电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52553" target="_blank">5980元</a>
+									<input id="Id22920" type="checkbox" value="52553" name="pno" tooltip="0" tooltxt="[精](二建)机电工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52598" target="_blank">1280元</a>
+									<input id="Id22892" type="checkbox" value="52598" name="pno" tooltip="0" tooltxt="[保](二建)机电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52608" target="_blank">3980元</a>
+									<input id="Id22892" type="checkbox" value="52608" name="pno" tooltip="0" tooltxt="[保](二建)机电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52588" target="_blank">780元</a>
+									<input id="Id22921" type="checkbox" value="52588" name="pno" tooltip="0" tooltxt="[保](二建)机电工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52576" target="_blank">2980元</a>
+									<input id="Id22848" type="checkbox" value="52576" name="pno" tooltip="0" tooltxt="[VIP](二建)机电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52548" target="_blank">480元</a>
+									<input id="Id22922" type="checkbox" value="52548" name="pno" tooltip="0" tooltxt="[VIP](二建)机电工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52530" target="_blank">1680</a>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52531" target="_blank">元</a>
+									<input id="Id22922" type="checkbox" value="52531" name="pno" tooltip="0" tooltxt="[VIP](二建)机电工程专业(全科)"></td>
+							</tr>
+							<tr>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=2&sid=3bd2db5b-e64d-4212-8fe7-45699a16bfcd&s=jz1" target="_blank">市政公用工程</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=34be93ce-ffc3-4231-9ccd-454d85882d11" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59887" target="_blank">3680元</a>
+									<input id="Id22911" type="checkbox" value="59887" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59897" target="_blank">12800元</a>
+									<input id="Id22915" type="checkbox" value="59897" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52570" target="_blank">1580元</a>
+									<input id="Id22909" type="checkbox" value="52570" name="pno3" tooltip="0" tooltxt="[精](二建)公路工程专业(单科)" /></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52556" target="_blank">5980元</a>
+									<input id="Id22917" type="checkbox" value="52556" name="pno" tooltip="0" tooltxt="[精](二建)公路工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52600" target="_blank">1280元</a>
+									<input id="Id22891" type="checkbox" value="52600" name="pno" tooltip="0" tooltxt="[保](二建)公路工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52610" target="_blank">3980元</a>
+									<input id="Id22891" type="checkbox" value="52610" name="pno" tooltip="0" tooltxt="[保](二建)公路工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52590" target="_blank">780元</a>
+									<input id="Id22918" type="checkbox" value="52590" name="pno" tooltip="0" tooltxt="[保](二建)公路工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52579" target="_blank">2980元</a>
+									<input id="Id22847" type="checkbox" value="52579" name="pno" tooltip="0" tooltxt="[VIP](二建)公路工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52546" target="_blank">480元</a>
+									<input id="Id22919" type="checkbox" value="52546" name="pno" tooltip="0" tooltxt="[VIP](二建)公路工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52530" target="_blank">1680</a>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52533" target="_blank">元</a>
+									<input id="Id22919" type="checkbox" value="52533" name="pno" tooltip="0" tooltxt="[VIP](二建)公路工程专业(全科) "></td>
+							</tr>
+							<tr>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=2&sid=99c70a4b-998c-431e-84ed-36c5f5f62cd6&s=jz1" target="_blank">公路工程</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=5d78d7ec-f6d6-44dd-8478-f834efec8047" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59886" target="_blank">3680元</a>
+									<input id="Id22911" type="checkbox" value="59886" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59896" target="_blank">12800元</a>
+									<input id="Id22915" type="checkbox" value="59896" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52569" target="_blank">1580元</a>
+									<input id="Id22908" type="checkbox" value="52569" name="pno" tooltip="0" tooltxt="[精](二建)市政公用工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52555" target="_blank">5980元</a>
+									<input id="Id22923" type="checkbox" value="52555" name="pno" tooltip="0" tooltxt="[精](二建)市政公用工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52599" target="_blank">1280元</a>
+									<input id="Id22890" type="checkbox" value="52599" name="pno" tooltip="0" tooltxt="[保](二建)市政公用工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52609" target="_blank">3980元</a>
+									<input id="Id22890" type="checkbox" value="52609" name="pno" tooltip="0" tooltxt="[保](二建)市政公用工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52589" target="_blank">780元</a>
+									<input id="Id22924" type="checkbox" value="52589" name="pno" tooltip="0" tooltxt="[保](二建)市政公用工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52578" target="_blank">2980元</a>
+									<input id="Id22846" type="checkbox" value="52578" name="pno" tooltip="0" tooltxt="[VIP](二建)市政公用工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52547" target="_blank">480元</a>
+									<input id="Id22925" type="checkbox" value="52547" name="pno" tooltip="0" tooltxt="[VIP](二建)市政公用工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52530" target="_blank">1680</a>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52532" target="_blank">元</a>
+									<input id="Id22925" type="checkbox" value="52532" name="pno" tooltip="0" tooltxt="[VIP](二建)市政公用工程专业(全科)"></td>
+							</tr>
+							<tr>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=2&sid=4ce5ab54-fa9b-46aa-8da6-96f905fd8dd9&s=jz1" target="_blank">铁路工程</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=6dd4c720-a998-4db3-8d44-bd7d51607a8d" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59888" target="_blank">3680元</a>
+									<input id="Id22911" type="checkbox" value="59888" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59898" target="_blank">12800元</a>
+									<input id="Id22915" type="checkbox" value="59898" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52571" target="_blank">1580元</a>
+									<input id="Id22841" type="checkbox" value="52571" name="pno" tooltip="0" tooltxt="[精](二建)水利水电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52557" target="_blank">5980元</a>
+									<input id="Id22926" type="checkbox" value="52557" name="pno" tooltip="0" tooltxt="[精](二建)水利水电工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52601" target="_blank">1280元</a>
+									<input id="Id22837" type="checkbox" value="52601" name="pno" tooltip="0" tooltxt="[保](二建)水利水电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52611" target="_blank">3980元</a>
+									<input id="Id22837" type="checkbox" value="52611" name="pno" tooltip="0" tooltxt="[保](二建)水利水电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52591" target="_blank">780元</a>
+									<input id="Id22927" type="checkbox" value="52591" name="pno" tooltip="0" tooltxt="[保](二建)水利水电工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52580" target="_blank">2980元</a>
+									<input id="Id22833" type="checkbox" value="52580" name="pno" tooltip="0" tooltxt="[VIP](二建)水利水电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52544" target="_blank">480元</a>
+									<input id="Id22831" type="checkbox" value="52544" name="pno" tooltip="0" tooltxt="[VIP](二建)水利水电工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52530" target="_blank">1680</a>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52534" target="_blank">元</a>
+									<input id="Id22831" type="checkbox" value="52534" name="pno" tooltip="0" tooltxt="[VIP](二建)水利水电工程专业(全科)"></td>
+							</tr>
+							<tr>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=2&sid=589b4f90-8945-42f1-9c6d-069cdf6460e7&s=jz1" target="_blank">水利水电工程</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=d54a59b0-6575-4239-8c21-caa08bc41863" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59889" target="_blank">3680元</a>
+									<input id="Id22911" type="checkbox" value="59889" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59899" target="_blank">12800元</a>
+									<input id="Id22915" type="checkbox" value="59899" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52572" target="_blank">1580元</a>
+									<input id="Id22840" type="checkbox" value="52572" name="pno" tooltip="0" tooltxt="[精](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52558" target="_blank">5980元</a>
+									<input id="Id22930" type="checkbox" value="52558" name="pno" tooltip="0" tooltxt="[精](二建)通信与广电工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52602" target="_blank">1280元</a>
+									<input id="Id22836" type="checkbox" value="52602" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52612" target="_blank">3980</a>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52612" target="_blank">元</a>
+									<input id="Id22836" type="checkbox" value="50437" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52593" target="_blank">780元</a>
+									<input id="Id22931" type="checkbox" value="52593" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52581" target="_blank">2980元</a>
+									<input id="Id22832" type="checkbox" value="52581" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52543" target="_blank">480元</a>
+									<input id="Id22932" type="checkbox" value="52543" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52530" target="_blank">1680</a>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52536" target="_blank">元</a>
+									<input id="Id22932" type="checkbox" value="52536" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(全科) "></td>
+							</tr>
+							<tr>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=2&sid=b0551fcb-3ff2-4f8d-b84f-a4cc53151ac3&s=jz1" target="_blank">通信与广电工程</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=66add7ff-620c-437a-9476-73fcb1f7b410" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59890" target="_blank">3680元</a>
+									<input id="Id22911" type="checkbox" value="59890" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59900" target="_blank">12800元</a>
+									<input id="Id22915" type="checkbox" value="59900" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52573" target="_blank">1580元</a>
+									<input id="Id22840" type="checkbox" value="52573" name="pno" tooltip="0" tooltxt="[精](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52559" target="_blank">5980元</a>
+									<input id="Id22930" type="checkbox" value="52559" name="pno" tooltip="0" tooltxt="[精](二建)通信与广电工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52603" target="_blank">1280元</a>
+									<input id="Id22836" type="checkbox" value="52603" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52613" target="_blank">3980元</a>
+									<input id="Id22836" type="checkbox" value="52613" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52582" target="_blank">780元</a>
+									<input id="Id22931" type="checkbox" value="52582" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52577" target="_blank">2980元</a>
+									<input id="Id22832" type="checkbox" value="52577" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52542" target="_blank">480元</a>
+									<input id="Id22932" type="checkbox" value="52542" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52530" target="_blank">1680</a>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52537" target="_blank">元</a>
+									<input id="Id22932" type="checkbox" value="52537" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(全科) "></td>
+							</tr>
+							<tr>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=2&sid=e8a38e02-e468-42c6-a29a-84ad22bda8e7&s=jz1" target="_blank">矿业工程</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=7c879c96-583d-4bbe-a049-f387c13b38a3" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59893" target="_blank">3680元</a>
+									<input id="Id22911" type="checkbox" value="59893" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59903" target="_blank">12800元</a>
+									<input id="Id22915" type="checkbox" value="59903" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52563" target="_blank">1580元</a>
+									<input id="Id22840" type="checkbox" value="52563" name="pno" tooltip="0" tooltxt="[精](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52562" target="_blank">5980元</a>
+									<input id="Id22930" type="checkbox" value="52562" name="pno" tooltip="0" tooltxt="[精](二建)通信与广电工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52606" target="_blank">1280元</a>
+									<input id="Id22836" type="checkbox" value="52606" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52616" target="_blank">3980</a>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52616" target="_blank">元</a>
+									<input id="Id22836" type="checkbox" value="50437" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52586" target="_blank">780元</a>
+									<input id="Id22931" type="checkbox" value="52586" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52585" target="_blank">2980元</a>
+									<input id="Id22832" type="checkbox" value="52585" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52551" target="_blank">480元</a>
+									<input id="Id22932" type="checkbox" value="52551" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52530" target="_blank">1680</a>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52550" target="_blank">元</a>
+									<input id="Id22932" type="checkbox" value="52550" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(全科) "></td>
+							</tr>
+							<tr>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=2&sid=9763a1bf-3944-40df-8233-ce0b8c40997b&s=jz1" target="_blank">港口与航道工程</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=152367f7-6ce2-4980-a90d-9230a9775a60" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59892" target="_blank">3680元</a>
+									<input id="Id22911" type="checkbox" value="59892" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59902" target="_blank">12800元</a>
+									<input id="Id22915" type="checkbox" value="59902" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52575" target="_blank">1580元</a>
+									<input id="Id22840" type="checkbox" value="52575" name="pno" tooltip="0" tooltxt="[精](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52561" target="_blank">5980元</a>
+									<input id="Id22930" type="checkbox" value="52561" name="pno" tooltip="0" tooltxt="[精](二建)通信与广电工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52605" target="_blank">1280元</a>
+									<input id="Id22836" type="checkbox" value="52605" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52615" target="_blank">3980元</a>
+									<input id="Id22836" type="checkbox" value="52615" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52584" target="_blank">780元</a>
+									<input id="Id22931" type="checkbox" value="52584" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52545" target="_blank">2980元</a>
+									<input id="Id22832" type="checkbox" value="52545" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52540" target="_blank">480元</a>
+									<input id="Id22932" type="checkbox" value="52540" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52530" target="_blank">1680</a>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52539" target="_blank">元</a>
+									<input id="Id22932" type="checkbox" value="52539" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(全科) "></td>
+							</tr>
+							<tr>
+								<td class="td_title">
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/list.aspx?tab=2&sid=f76e48b5-5086-40fd-ad87-ddfa598b17a6&s=jz1" target="_blank">民航机场工程</a>
+								</td>
+								<td>
+									<a href="http://users.wangxiao.cn/player/Index.aspx?Id=c6875868-8081-4f65-8576-043d9d688590" target="new"><img src="http://img.wangxiao.cn//images/jz2//u275.png" alt="" /></a>
+								</td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59891" target="_blank">3680元</a>
+									<input id="Id22911" type="checkbox" value="59891" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=59901" target="_blank">12800元</a>
+									<input id="Id22915" type="checkbox" value="59901" name="pno" tooltip="0" tooltxt="[精](二建)建筑工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52574" target="_blank">1580元</a>
+									<input id="Id22840" type="checkbox" value="52574" name="pno" tooltip="0" tooltxt="[精](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52560" target="_blank">5980元</a>
+									<input id="Id22930" type="checkbox" value="52560" name="pno" tooltip="0" tooltxt="[精](二建)通信与广电工程专业(全科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52604" target="_blank">1280元</a>
+									<input id="Id22836" type="checkbox" value="52604" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52614" target="_blank">3980元</a>
+									<input id="Id22836" type="checkbox" value="52614" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52592" target="_blank">780元</a>
+									<input id="Id22931" type="checkbox" value="52592" name="pno" tooltip="0" tooltxt="[保](二建)通信与广电工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52583" target="_blank">2980元</a>
+									<input id="Id22832" type="checkbox" value="52583" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(单科)"></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52541" target="_blank">480元</a>
+									<input id="Id22932" type="checkbox" value="52541" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(全科) "></td>
+								<td>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52530" target="_blank">1680</a>
+									<a style="text-decoration:none;color:#333" href="http://ke.wangxiao.cn/detail.aspx?n=52538" target="_blank">元</a>
+									<input id="Id22932" type="checkbox" value="52538" name="pno" tooltip="0" tooltxt="[VIP](二建)通信与广电工程专业(全科) "></td>
+							</tr>
+							<tr> </tr>
+							<tr>
+								<td colspan="13" id="yh">
+									<div class="submit_box"> <input class="submit_indexbtn1" type="submit" value="确认，去缴费"><br><span style="font-size:12px;font-family:微软雅黑;color:#666666">选中"□"即可完成选课！</span></div>
+							</tr>
+							
+						</tbody>
+					</table>
+				</form>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>
+
+<script type="text/javascript" src="http://img.wangxiao.cn/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".tad-left-list").each(function() {
+			$(this).hover(function() {
+				var index = $(this).index();
+				if(index == 0) {
+					$(".tad-left-list").eq(0).css({
+						"background-color": "#009900",
+						"color": "#fff"
+					}).siblings().css({
+						"background-color": "#fff",
+						"color": "#666"
+					});
+				} else if(index == 1) {
+					$(".tad-left-list").eq(1).css({
+						"background-color": "#f22533",
+						"color": "#fff"
+					}).siblings().css({
+						"background-color": "#fff",
+						"color": "#666"
+					});
+				} else if(index == 2) {
+					$(".tad-left-list").eq(2).css({
+						"background-color": "#17b8e8",
+						"color": "#fff"
+					}).siblings().css({
+						"background-color": "#fff",
+						"color": "#666"
+					});
+				} else if(index == 3) {
+					$(".tad-left-list").eq(3).css({
+						"background-color": "#f17e1f",
+						"color": "#fff"
+					}).siblings().css({
+						"background-color": "#fff",
+						"color": "#666"
+					});
+				} else if(index == 4) {
+					$(".tad-left-list").eq(4).css({
+						"background-color": "#17b8e8",
+						"color": "#fff"
+					}).siblings().css({
+						"background-color": "#fff",
+						"color": "#666"
+					});
+				}
+				$(".tad-center-list").eq(index).show().siblings().hide();
+			})
+		});
+		$(".hover-show").each(function() {
+			$(this).hover(function() {
+				var index = $(this).index();
+				$(".tablet-color .tip-box").eq(index - 2).find(".hover-title").toggle();
+			})
+		});
+		$(".close-click-box").click(function() {
+			$(".click-outer-box,.click-box").hide();
+		});
+		var daoxueHeight = $(".base-course").outerHeight() - 44; /*$(".base-course .outer-box").height()+$(".base-course .outer-box").height();*/
+		$(".daoxue-course .outer-box,.goto-exam .outer-box1").height(daoxueHeight + "px");
+		var bmFirst = $("#bm-list-second").outerHeight();
+		$("#bm-list-first").height(bmFirst + "px");
+		$('.move-float-show').mouseover(function() {
+			var aa=$(this).find('.float-lay');
+			console.log(aa.offset());
+			$(this).find('.float-lay').show();
+		}).mouseout(function() {
+			$(this).find('.float-lay').hide();
+		})
+	});
+</script>
