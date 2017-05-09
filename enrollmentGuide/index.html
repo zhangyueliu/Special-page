@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="http://img.wangxiao.cn/js/jquery-1.8.1.min.js"></script>
 	<script type="text/javascript" src="js/swipe.js"></script>
 	<script type="text/javascript" src="http://static.wangxiao.cn/js/top.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/base-green.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
 </head>
 <body>
 	<nav>
@@ -855,14 +855,14 @@
 		//页面滚动时，表格头部浮动
 		window.onscroll=function(){
 			if($('.top-div').offset().top<$(document).scrollTop()){
-				$('.top').addClass('fixeds');
+				$('.top').addClass('fixeds').addClass('border-bottom-shadow');
 				$('.top').css({"width":$('.top-div').width()})
 				//当滑动出表格的时候取消浮动
 				if($('.compare-table').offset().top+$('.compare-table').height()-$('.top').height()<$(document).scrollTop()){
-					$('.top').removeClass('fixeds');
+					$('.top').removeClass('fixeds').removeClass('border-bottom-shadow');
 				}
 			}else{
-				$('.top').removeClass('fixeds');
+				$('.top').removeClass('fixeds').removeClass('border-bottom-shadow');
 			}
 		}
 		//当鼠标经过时，浮出层
