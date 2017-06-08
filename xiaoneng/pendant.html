@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://static.wangxiao.cn/zhuanti/2017jjs/js/jquery1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			body,
+			html {
+				font-family: "微软雅黑";
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.pendant__right {
+				position: fixed;
+				right: 0;
+				top: 25%;
+			}
+			
+			.pendant__right__list li {
+				list-style: none;
+				margin-bottom: 5px;
+				cursor: pointer;
+				position: relative;
+			}
+			
+			.pendant__right__list li a.person_icon {
+				background-color: #1ab7e2;
+			}
+			
+			.pendant__right__list li:not(.pendant__tel) a:hover {
+				background-color: #1ab7e2;
+			}
+			
+			.pendant__right__list li img {
+				display: block;
+			}
+			
+			.pendant__right__list li a {
+				display: block;
+				border-radius: 5px;
+				background-color: #c9c9c9;
+			}
+			
+			.hover_text {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				font-size: 18px;
+				color: #fff;
+				text-align: center;
+				padding: 5px;
+				line-height: 25px;
+				opacity: 0;
+				box-sizing: border-box;
+				border-radius: 5px;
+			}
+			
+			.hover_text:hover {
+				opacity: 1;
+				background-color: #1ab7e2;
+			}
+			
+			.pendant__tel:hover {
+				border-radius: 0 5px 5px 0;
+			}
+			
+			.slip_tel {
+				position: absolute;
+				right: -81px;
+				top: 0;
+				bottom: 0;
+				line-height: 60px;
+				font-size: 18px;
+				color: #fff;
+				background-color: #1ab7e2;
+				border-radius: 5px 0 0 5px;
+				text-align: center;
+				box-sizing: border-box;
+				width: 140px;
+				overflow: hidden;
+				transition: all .3s ease;
+				z-index: -1;
+			}
+			
+			.code {
+				position: absolute;
+				right: 85px;
+				bottom: -35%;
+				width: 100px;
+				height: 100px;
+				border: 1px solid #c9c9c9;
+				padding: 2px;
+				box-sizing: border-box;
+				display: none;
+			}
+			
+			.code img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.pendant__tel__box {
+				background-color: #fff;
+				border-radius: 8px 0 0 8px;
+			}
+			
+			.pendant__tel__box .sliphover {
+				background-color: #1ab7e2;
+			}
+			
+			.arrow_box {
+				border-color: transparent transparent transparent #C9C9C9;
+				border-style: solid;
+				border-width: 10px 15px;
+				position: absolute;
+				right: -31px;
+				bottom: 40%;
+			}
+			
+			.arrow_in {
+				border-color: #red;
+				border: 10px 10px;
+				border-color: transparent transparent transparent #fff;
+				border-style: solid;
+				border-width: 10px 15px;
+				position: absolute;
+				right: -29px;
+				bottom: 40%;
+			}
+			
+			.gotop {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="height: 2000px;"></div>
+		<div class="pendant__right">
+			<ul class="pendant__right__list">
+				<li>
+					<a class="person_icon" onclick="NTKF.im_openInPageChat('kf_9009_1496385142856')">
+						<img src="http://img.wangxiao.cn/images/icon-person.png" />
+					</a>
+				</li>
+				<li>
+					<a class="wx_box">
+						<img src="http://img.wangxiao.cn/images/icon-wx.png" />
+						<div class="code">
+							<div class="arrow_box"></div>
+							<div class="arrow_in"></div>
+							<img src="http://static.wangxiao.cn/images/wx_weixin.jpg" />
+						</div>
+					</a>
+				</li>
+				<li class="pendant__tel">
+					<div class="pendant__tel__box">
+						<a>
+							<img src="http://img.wangxiao.cn/images/icon-tel.png" />
+							<div class="slip_tel">4000-18-8000</div>
+						</a>
+					</div>
+				</li>
+				<li>
+					<a>
+						<img src="http://img.wangxiao.cn/images/icon-course.png" />
+						<div class="hover_text">观看<br>视频</div>
+					</a>
+				</li>
+				<li>
+					<a class="tikucode_box">
+						<img src="http://img.wangxiao.cn/images/icon-down.png" />
+						<div class="hover_text">下载<br>题库</div>
+						<div class="code">
+							<div class="arrow_box"></div>
+							<div class="arrow_in"></div>
+							<img src="http://static.wangxiao.cn/images/wx_weixin.jpg" />
+						</div>
+					</a>
+				</li>
+				<li class="gotop">
+					<a>
+						<img src="http://img.wangxiao.cn/images/icon-gotop.png" />
+						<div class="hover_text">回到<br>顶部</div>
+					</a>
+				</li>
+			</ul>
+
+		</div>
+		<script>		
+			/*回到顶部动画滚动及回到顶部按钮是否出现*/
+			(function($) {
+				var timer = null;
+				var isTop = true;
+				$.fn.goTop = function() {
+					/*滚动条滚动*/
+					$(window).scroll(function() {
+						var top = $(window).scrollTop();
+						if(top > 100) {
+							$('.gotop').show();
+						} else {
+							$('.gotop').hide();
+						}
+						/*传过来是true*/
+						if(!isTop) {
+							clearInterval(timer);
+						}
+						isTop = false;
+
+					})
+					$('.gotop').on('click', function() {
+						/*重复执行*/
+						timer = setInterval(function() {
+							/*每30ms获取一次距离,计算一次速度,重新给滚动条位置赋值*/
+							var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+							var speed = Math.floor(-scrolltop / 6);
+							/*在置顶过程中，这句代码出发scroll事件*/
+							document.documentElement.scrollTop = document.body.scrollTop = scrolltop + speed;
+							/*每次将false改为true*/
+							isTop = true;
+							/*置顶后清除计时器*/
+							if(scrolltop == 0) {
+								clearInterval(timer);
+							}
+						}, 30);
+					});
+				};
+			})(window.jQuery);
+		</script>
+		<script>
+		/*小能需要用户名，获取用户名*/			
+			window.onload = function() {
+				
+				$('body').goTop();
+				var time;
+				$('.pendant__tel').mouseenter(function() {
+					$(this).find('.slip_tel').css({
+						"right": "55px"
+					});
+					if(!$(this).find('a').hasClass('sliphover')) {
+						$(this).find('a').addClass('sliphover');
+					}
+					clearTimeout(time);
+				}).mouseleave(function() {
+					$(this).find('.slip_tel').css({
+						"right": "-81px"
+					});
+					time = setTimeout(function() {
+						if($('.pendant__tel').find('.sliphover').hasClass('sliphover')) {
+							$('.pendant__tel').find('.sliphover').removeClass('sliphover');
+						}
+					}, 270);
+				});
+				$('.wx_box,.tikucode_box').mouseenter(function() {
+					$(this).find('.code').show();
+				}).mouseleave(function() {
+					$(this).find('.code').hide();
+				});
+
+			}
+			function getCookie(name) {
+				var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+				if(arr = document.cookie.match(reg))
+					return unescape(arr[2]);
+				else
+					return '';
+			}
+			var username=getCookie("UserCookieName");
+			/*小能配置*/
+			NTKF_PARAM = {
+				siteid: "kf_9009", /*企业ID，为固定值，必填*/
+				settingid: "kf_9009_1496385142856", /*接待组ID，为固定值，必填*/
+				uid: "", /*用户ID，未登录可以为空，但不能给null，uid赋予的值显示到小能客户端上*/
+				uname: username, /*用户名，未登录可以为空，但不能给null，uname赋予的值显示到小能客户端上*/
+				isvip: "0", /*是否为vip用户，0代表非会员，1代表会员，取值显示到小能客户端上*/
+				userlevel: "1", /*网站自定义会员级别，0-N，可根据选择判断，取值显示到小能客户端上*/
+				erpparam: "abc" /*erpparam为erp功能的扩展字段，可选，购买erp功能后用于erp功能集成*/
+			}
+		</script>
+		<script type="text/javascript" src="http://dl.ntalker.com/js/xn6/ntkfstat.js?siteid=kf_9009" charset="utf-8"></script>
+
+	</body>
+
+</html>
