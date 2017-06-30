@@ -58,11 +58,6 @@ body {
   font-size: 0;
   clear: both;
 }
-@font-face {
-  font-family: myFirstFont;
-  src: url('../fonts/SourceHanSerifCN-Regular.otf'), url('../fonts/SourceHanSerifCN-Bold.otf');
-  /* IE9 */
-}
 .wrap {
   width: 1000px;
   margin: 0 auto;
@@ -224,6 +219,10 @@ body {
   float: left;
   margin-bottom: 40px;
 }
+.textbook__box_each > img {
+  width: 300px;
+  height: 230px;
+}
 .textbook__box_each.middle {
   margin-left: 40px;
   margin-right: 40px;
@@ -243,7 +242,7 @@ body {
   padding: 20px 0 15px;
 }
 .textbook__box_each_info_dsc {
-  font-family: myFirstFont,SimSun;
+  font-family: SimSun;
   line-height: 25px;
   height: 50px;
   overflow: hidden;
@@ -510,7 +509,7 @@ body {
   width: 480px;
 }
 .videoanalysis_left_box_head {
-  font-family: myFirstFont, "微软雅黑";
+  font-family: "微软雅黑";
   font-size: 18px;
   color: #2980b9;
   line-height: 39px;
@@ -580,7 +579,7 @@ body {
   margin-bottom: 2px;
 }
 .videoanalysis_right_each_title {
-  font-family: myFirstFont, "微软雅黑";
+  font-family: simsun;
   line-height: 22px;
   padding: 5px 10px;
   overflow: hidden;
@@ -638,7 +637,7 @@ body {
 }
 .information_box_each_head {
   line-height: 34px;
-  font-family: myFirstFont, "微软雅黑";
+  font-family: "微软雅黑";
 }
 .information_box_each_footer {
   cursor: pointer;
@@ -673,13 +672,13 @@ body {
 }
 .information_box_each_content_textbox_top {
   font-size: 18px;
-  font-family: myFirstFont, "微软雅黑";
+  font-family: "微软雅黑";
   color: #ffde00;
   line-height: 30px;
 }
 .information_box_each_content_textbox_bottom {
   font-size: 12px;
-  font-family: myFirstFont, "微软雅黑";
+  font-family: "微软雅黑";
   color: #fff;
   line-height: 20px;
 }
@@ -707,7 +706,7 @@ body {
   margin-top: -1px;
 }
 .procourse_box_each_info_each {
-  font-family: myFirstFont, "微软雅黑";
+  font-family: "微软雅黑";
   margin-top: 10px;
   line-height: 28px;
 }
